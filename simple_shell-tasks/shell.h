@@ -11,6 +11,8 @@
 #include <fcntl.h>
 #include <errno.h>
 
+#define BUFFER_SIZE 1024
+
 extern char **environ;
 
 /* Function prototypes from Task 1 */
@@ -24,5 +26,11 @@ void display_prompt(void);
 char *read_input(void);
 int execute_single_command(char *input); /* Renamed to avoid conflict */
 void print_error(char *msg);
+
+/* Function prototypes from Task 3 */
+void prompt(void);
+void handle_input(char *input);
+void sigchld_handler(int sig);
+int tokenize_input(char *input, char **argv);
 
 #endif /* SHELL_H */
