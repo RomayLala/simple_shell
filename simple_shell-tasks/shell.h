@@ -9,10 +9,20 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <errno.h>
 
-void execute_command(char **argv);
+extern char **environ;
+
+/* Function prototypes from Task 1 */
+void execute_command(char **argv); /* Takes an array of strings (char**) */
 char *read_line(void);
 char **split_line(char *line);
 void shell_loop(void);
+
+/* Function prototypes from Task 2 */
+void display_prompt(void);
+char *read_input(void);
+int execute_single_command(char *input); /* Renamed to avoid conflict */
+void print_error(char *msg);
 
 #endif /* SHELL_H */
