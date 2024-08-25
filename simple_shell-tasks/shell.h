@@ -33,4 +33,8 @@ void handle_input(char *input);
 void sigchld_handler(int sig);
 int tokenize_input(char *input, char **argv);
 
+/* Function prototypes from Task 4 */
+char *find_executable(char *command);
+void handle_error(char *msg);
+
 #endif /* SHELL_H */
